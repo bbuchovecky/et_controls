@@ -1,0 +1,44 @@
+ACCLIM_SF:
+  max: '28'
+  min: '27'
+FUN_fracfixers:
+  max: '20'
+  min: '19'
+Jmaxb0:
+  max: '14'
+  min: '13'
+KCN:
+  max: '26'
+  min: '25'
+d_max:
+  max: '4'
+  min: '3'
+default:
+  default: '0'
+dleaf:
+  max: '2'
+  min: '1'
+fff:
+  max: '8'
+  min: '7'
+kmax:
+  max: '16'
+  min: '15'
+leafcn:
+  max: '22'
+  min: '21'
+lmrha:
+  max: '24'
+  min: '23'
+maximum_leaf_wetted_fraction:
+  max: '6'
+  min: '5'
+medlynintercept:
+  max: '12'
+  min: '11'
+medlynslope:
+  max: '10'
+  min: '9'
+psi50:
+  max: '18'
+  min: '17'

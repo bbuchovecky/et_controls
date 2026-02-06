@@ -1,0 +1,28 @@
+#PBS -N qbinmean_jobarray
+#PBS -A UWAS0155
+### Each array sub-job will be assigned ncpus with mem/ncpus GB of memory
+#PBS -l select=1:ncpus=4:mem=16GB
+#PBS -l walltime=00:20:00
+#PBS -q develop
+### Request 26 sub-jobs with array indices spanning 1-26 (input member index)
+#PBS -J 1-26
+#PBS -j oe
+#PBS -o logs/
+
+# Current selection is probably overkill, but it doesn't use many core-hours
+# and I'm too lazy to do proper performance analysis now
+NCPUS=4  # must match allocated ncpus
+NMEM=4   # must match allocated mem / ncpus (memory PER cpu)
+
+# Variables passed via qsub:
+# SCRIPT = single_[qe]binmean*.py script to run
+# NBIN = number of x, y quantile bins
+# TIMEAGG = 1 for time aggregated quantiles, 0 for time mean
+
+
+# Load conda environment
+source /glade/work/bbuchovecky/miniforge3/etc/profile.d/conda.sh
+conda activate data-sci
+
+# Run script for each member
+./${SCRIPT} --member ${PBS_ARRAY_INDEX} --ncpus ${NCPUS} --nmem ${NMEM} --nbin ${NBIN} --timeagg ${TIMEAGG}
