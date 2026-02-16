@@ -1,4 +1,4 @@
-#!/glade/work/bbuchovecky/miniforge3/envs/data-sci/bin/python3.14
+#!/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/bin/python3.12
 
 import os
 import sys

@@ -1,3 +1,4 @@
+#!/bin/bash
 #PBS -N qbinmean_jobarray
 #PBS -A UWAS0155
 ### Each array sub-job will be assigned ncpus with mem/ncpus GB of memory

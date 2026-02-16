@@ -1,27 +1,26 @@
 #!/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/bin/python3.12
-#PBS -N quantiles
-#PBS -A UWAS0155
-#PBS -l select=1:ncpus=8:mem=128GB
-#PBS -l walltime=04:00:00
-#PBS -q develop
-#PBS -j oe
-#PBS -o logs/
 
 import os
 import sys
 import time
+import argparse
 from pathlib import Path
 from dask.distributed import Client, LocalCluster, wait
-
 import numpy as np
 import xarray as xr
 import xclimate as xclim
 
 
-def main():
-
-    ncpus = 8  # must match allocated ncpus
-    nmem = 16  # must match allocated mem / ncpus (memory PER cpu)
+def main(
+    member: int,
+    ncpus: int,
+    nmem: float,
+    nbin: int,
+):
+    
+    ############################
+    #### SETUP DASK CLUSTER ####
+    ############################
 
     memory_limit = f"{nmem}GB"
     tmpdir = os.environ.get("TMPDIR", "/tmp")
@@ -40,10 +39,10 @@ def main():
     cluster = LocalCluster(
         n_workers=ncpus,
         threads_per_worker=1,
-        processes=True,             # use processes, not threads (this is nuanced...)
-        memory_limit=memory_limit,  # per-worker memory limit
-        local_directory=tmpdir,     # spill + temp files
-        dashboard_address=None,     # no dashboard in batch
+        processes=True,                # use processes, not threads
+        memory_limit=memory_limit,     # per-worker memory limit
+        local_directory=tmpdir,        # spill + temp files
+        dashboard_address=None,        # no dashboard in batch
     )
     client = Client(cluster)
     print("Dask dashboard:", client.dashboard_link)
@@ -53,21 +52,33 @@ def main():
     #### START COMPUTATION ####
     ###########################
 
+    # Number of months for the growing season
+    growsn_nmon = 3
 
-    
+    # Time period to select
     time_slice = slice("1995-01", "2014-12")
     year_start = time_slice.start[:4]
     year_end = time_slice.stop[:4]
+    
+    # Root directory to save output
+    rootdir = Path("/glade/work/bbuchovecky/et_controls/proc/qbin")
+
+    # Define mask thresholds
+    snow_pct_threshold = 100    # maximum allowable percent of snow cover on all months of the average year
+    nonglc_pct_threshold = 100  # maximum allowable percent of glaciated land for a NON-glaciated gridcell
+
+    # Load grid data
     grid = xclim.load_fhist_ppe_grid()
 
-    snow_pct_threshold = 80    # maximum allowable percent of snow cover on all months of the average year
-    nonglc_pct_threshold = 80  # maximum allowable percent of glaciated land for a NON-glaciated gridcell
-
+    # Load snow cover
     fsno = xclim.load_fhist("FSNO_month_1", keep_var_only=True)["FSNO"].sel(time=time_slice).reindex_like(grid, method="nearest", tolerance=1e-3)
     fsno_clim_min = fsno.groupby("time.month").mean().min(dim="month")
 
+    # Formatted member string
+    str_mem = str(fsno.isel(member=member).member.item())
+
     # Create masks
-    snow_mask = fsno_clim_min <= (snow_pct_threshold / 100)
+    snow_mask = fsno_clim_min.isel(member=member) <= (snow_pct_threshold / 100)
     nonglc_mask = grid.PCT_GLC <= nonglc_pct_threshold
     full_mask = snow_mask & nonglc_mask
 
@@ -78,23 +89,17 @@ def main():
         "EFLX_LH_TOT_month_1",
         "SOILWATER_10CM_month_1",
         "FSDS_month_1", "FSR_month_1", "FLDS_month_1", "FIRE_month_1",  # for net radiation
-        "PRECT_day_1", "TSA_day_1", "SOILWATER_10CM_day_1",  # daily variables
+        # "PRECT_day_1", "TSA_day_1", "SOILWATER_10CM_day_1",  # daily variables
 
     ]
-    n_qbin = np.array([15, 25, 50, 75, 100])
-    growsn_nmon = 3
-
-    rootdir = Path("/glade/work/bbuchovecky/et_controls/proc/qbin")
-    time_tag = "agg"
-
 
     print("Loading variables:")
     fhist = {}
     for v in variables:
-        print(f"  {v}")
+        print(f"  {v}", flush=True)
         name = "_".join(v.split("_")[:-2])
         fhist[v] = xclim.load_fhist(v, keep_var_only=True)[name].sel(time=time_slice).reindex_like(grid, method="nearest", tolerance=1e-3)
-        fhist[v] = fhist[v].where(full_mask)
+        fhist[v] = fhist[v].where(full_mask).isel(member=member)
         fhist[v].attrs["masks"] = f"gridcell percent glaciated land <= {nonglc_pct_threshold}\ngridcell percent snow cover on all months of average year <= {snow_pct_threshold}"
 
     # Monthly PRECT (PRECC + PRECL)
@@ -135,6 +140,11 @@ def main():
     fhist["TLAI_clim_1"] = fhist["TLAI_month_1"].weighted(fhist["TLAI_month_1"].time.dt.days_in_month).mean("time")
     fhist["TLAI_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
 
+    # Climatological growing season TLAI
+    print("  GROWSN_TLAI_clim_1")
+    fhist["GROWSN_TLAI_clim_1"] = fhist["GROWSN_TLAI_year_1"].mean("year")
+    fhist["GROWSN_TLAI_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
+
     # Annual mean EFLX_LH_TOT
     print("  EFLX_LH_TOT_year_1")
     fhist["EFLX_LH_TOT_year_1"] = fhist["EFLX_LH_TOT_month_1"].groupby("time.year").map(lambda x: x.weighted(x.time.dt.days_in_month).mean("time"))
@@ -148,13 +158,13 @@ def main():
     fhist["EFLX_LH_TOT_clim_1"] = fhist["EFLX_LH_TOT_month_1"].weighted(fhist["EFLX_LH_TOT_month_1"].time.dt.days_in_month).mean("time")
     fhist["EFLX_LH_TOT_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
 
-    # Annual precipitation difference between wettest and driest months
-    fhist["PRDIFF_year_1"] = fhist["PRECT_month_1"].groupby("time.year").map(lambda x: x.max(dim="time") - x.min(dim="time"))
-    fhist["PRDIFF_year_1"].attrs["long_name"] = "annual precipitation rate (PRECT) difference between wettest and driest months"
+    # # Annual precipitation difference between wettest and driest months
+    # fhist["PRDIFF_year_1"] = fhist["PRECT_month_1"].groupby("time.year").map(lambda x: x.max(dim="time") - x.min(dim="time"))
+    # fhist["PRDIFF_year_1"].attrs["long_name"] = "annual precipitation rate (PRECT) difference between wettest and driest months"
 
     # Total annual precipitation (PRECC + PRECL) in mm: m/s * 1000mm/m * 86400s/day * days/month
     print("  TOTANNPRECT_year_1")
-    fhist["TOTANNPRECT_year_1"] = fhist["PRECT_month_1"].groupby("time.year").map(lambda x: (x * 1000 * 86400 * x.time.dt.days_in_month).sum(dim="time"))
+    fhist["TOTANNPRECT_year_1"] = fhist["PRECT_month_1"].groupby("time.year").map(lambda x: (x * 1000 * 86400 * x.time.dt.days_in_month).sum(dim="time", min_count=1))
     fhist["TOTANNPRECT_year_1"].attrs = {
         "long_name": "total annual precipitation (PRECC + PRECL)",
         "units": "mm",
@@ -165,20 +175,20 @@ def main():
     fhist["TOTANNPRECT_clim_1"] = fhist["TOTANNPRECT_year_1"].mean("year")
     fhist["TOTANNPRECT_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
 
-    # Wet-day frequency as defined in Feldman et al. (2024) - the annual number of days with above 1 mm/day of precipitation
-    print("  WDFRQ_year_1")
-    daily_prect_threshold =  1 / (1000 * 24 * 60 * 60)  # [m/s] = 1 [mm/day]
-    fhist["WDFRQ_year_1"] = (fhist["PRECT_day_1"].where(nonglc_mask) > daily_prect_threshold).groupby("time.year").sum()
-    fhist["WDFRQ_year_1"].attrs = {
-        "long_name": "number of days with total precipitation rate (PRECT) > 1 mm/day",
-        "description": "defined in Feldman et al. Nature (2024)",
-        "units": "days",
-    }
+    # # Wet-day frequency as defined in Feldman et al. (2024) - the annual number of days with above 1 mm/day of precipitation
+    # print("  WDFRQ_year_1")
+    # daily_prect_threshold =  1 / (1000 * 24 * 60 * 60)  # [m/s] = 1 [mm/day]
+    # fhist["WDFRQ_year_1"] = (fhist["PRECT_day_1"].where(nonglc_mask) > daily_prect_threshold).groupby("time.year").sum()
+    # fhist["WDFRQ_year_1"].attrs = {
+    #     "long_name": "number of days with total precipitation rate (PRECT) > 1 mm/day",
+    #     "description": "defined in Feldman et al. Nature (2024)",
+    #     "units": "days",
+    # }
 
-    # Climatological WDFRQ
-    print("  WDFRQ_clim_1")
-    fhist["WDFRQ_clim_1"] = fhist["WDFRQ_year_1"].mean("year")
-    fhist["WDFRQ_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
+    # # Climatological WDFRQ
+    # print("  WDFRQ_clim_1")
+    # fhist["WDFRQ_clim_1"] = fhist["WDFRQ_year_1"].mean("year")
+    # fhist["WDFRQ_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
     
     # Monthly net radiation at the surface, + down
     #   Rn = (net SW) + (net LW) = (down SW - up SW) - (down LW - up LW)
@@ -281,33 +291,33 @@ def main():
     fhist["GROWSN_AI_clim_1"] = fhist["GROWSN_AI_year_1"].mean("year")
     fhist["GROWSN_AI_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
 
-    # Climatological inverse aridity index (INVAI = P / PET = EPRECT / RN)
-    print("  INVAI_clim_1")
-    fhist["INVAI_clim_1"] = fhist["EPRECT_clim_1"] / fhist["RN_clim_1"]
-    fhist["INVAI_clim_1"] = fhist["INVAI_clim_1"].rename("INVAI")
-    fhist["INVAI_clim_1"].attrs = {
-        "long_name": "inverse aridity index P/PET, lower is more arid",
-        "description": "(Lv * P) / Rn, filtered P = max(P, 0.001) [W/m2]",
-        "time_mean": f"{time_slice.start} to {time_slice.stop}"
-    }
+    # # Climatological inverse aridity index (INVAI = P / PET = EPRECT / RN)
+    # print("  INVAI_clim_1")
+    # fhist["INVAI_clim_1"] = fhist["EPRECT_clim_1"] / fhist["RN_clim_1"]
+    # fhist["INVAI_clim_1"] = fhist["INVAI_clim_1"].rename("INVAI")
+    # fhist["INVAI_clim_1"].attrs = {
+    #     "long_name": "inverse aridity index P/PET, lower is more arid",
+    #     "description": "(Lv * P) / Rn, filtered P = max(P, 0.001) [W/m2]",
+    #     "time_mean": f"{time_slice.start} to {time_slice.stop}"
+    # }
 
-    # Growing season inverse aridity index (INVAI = P / PET = EPRECT / RN)
-    print("  GROWSN_INVAI_year_1")
-    fhist["GROWSN_INVAI_year_1"] = fhist["GROWSN_EPRECT_year_1"] / fhist["GROWSN_RN_year_1"]
-    fhist["GROWSN_INVAI_year_1"] = fhist["GROWSN_INVAI_year_1"].rename("GROWSN_INVAI")
-    fhist["GROWSN_INVAI_year_1"].attrs = {
-        "long_name": "annual growing season mean inverse aridity index P/PET, lower is more arid",
-        "description": (
-            "(Lv * P) / Rn, filtered P = max(P, 0.001) [W/m2]\n" \
-            f"growing season is defined as the {growsn_nmon} adjacent months with the greatest climatological LAI, computed with xclimate.science.growing_season_month()"
-        ),
-        "time_mean": f"{time_slice.start} to {time_slice.stop}"
-    }
+    # # Growing season inverse aridity index (INVAI = P / PET = EPRECT / RN)
+    # print("  GROWSN_INVAI_year_1")
+    # fhist["GROWSN_INVAI_year_1"] = fhist["GROWSN_EPRECT_year_1"] / fhist["GROWSN_RN_year_1"]
+    # fhist["GROWSN_INVAI_year_1"] = fhist["GROWSN_INVAI_year_1"].rename("GROWSN_INVAI")
+    # fhist["GROWSN_INVAI_year_1"].attrs = {
+    #     "long_name": "annual growing season mean inverse aridity index P/PET, lower is more arid",
+    #     "description": (
+    #         "(Lv * P) / Rn, filtered P = max(P, 0.001) [W/m2]\n" \
+    #         f"growing season is defined as the {growsn_nmon} adjacent months with the greatest climatological LAI, computed with xclimate.science.growing_season_month()"
+    #     ),
+    #     "time_mean": f"{time_slice.start} to {time_slice.stop}"
+    # }
 
-    # Climatological growing season inverse aridity index (INVAI = P / PET = EPRECT / RN)
-    print("  GROWSN_INVAI_clim_1")
-    fhist["GROWSN_INVAI_clim_1"] = fhist["GROWSN_INVAI_year_1"].mean("year")
-    fhist["GROWSN_INVAI_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
+    # # Climatological growing season inverse aridity index (INVAI = P / PET = EPRECT / RN)
+    # print("  GROWSN_INVAI_clim_1")
+    # fhist["GROWSN_INVAI_clim_1"] = fhist["GROWSN_INVAI_year_1"].mean("year")
+    # fhist["GROWSN_INVAI_clim_1"].attrs["time_mean"] = f"{time_slice.start} to {time_slice.stop}"
 
 
     # Remove variables
@@ -320,120 +330,140 @@ def main():
     fhist.pop("FIRE_month_1")
 
 
+    print("\n=== Compute quantiles and bins ===", flush=True)
     print(list(fhist.keys()), flush=True)
+    print(f"Bins: {nbin}")
+    print(f"Time period: {year_start}-{year_end}, AGG")
 
-
-    print("\nComputing quantiles:", flush=True)
     for v, da in fhist.items():
-        print(f"\n  {v} {da.dims} {da.shape}:", end="", flush=True)
-
-        name = "_".join(v.split("_")[:-2])
-        if name[:6] == "GROWSN":
-            name = name[7:]
-        vrootdir = rootdir / name
-        os.makedirs(vrootdir, exist_ok=True)
+        print(f"\n  {v} {da.dims} {da.shape}:", flush=True)
 
         if "year" in v:
             tdim = "year"
-            chunks = {"member": 1, "lat": -1, "lon": -1, tdim: -1}
+            chunks = {"lat": -1, "lon": -1, tdim: -1}
             stack_dims = ["lat", "lon", tdim]
         elif "day" in v:
             tdim = "time"
-            chunks = {"member": 1, "lat": -1, "lon": -1, tdim: 365}
+            chunks = {"lat": -1, "lon": -1, tdim: 365}
             stack_dims = ["lat", "lon", tdim]
         elif "month" in v:
             tdim = "time"
-            chunks = {"member": 1, "lat": -1, "lon": -1, tdim: -1}
+            chunks = {"lat": -1, "lon": -1, tdim: -1}
             stack_dims = ["lat", "lon", tdim]
         else:  # climatology
-            chunks = {"member": 1, "lat": -1, "lon": -1}
+            chunks = {"lat": -1, "lon": -1}
             stack_dims = ["lat", "lon"]
-        
+
         # Rechunk to optimize for stacking and quantile computation
         # Chunk along member dimension only, consolidate spatial/temporal dims
         print(" rechunking...", end="", flush=True)
         da = da.chunk(chunks)
-        
+
         # Persist this variable in distributed memory
-        t0 = time.time()
         print(" persisting...", end="", flush=True)
+        t0 = time.time()
         da_persisted = da.persist()
         wait([da_persisted])  # Wait for persist to complete
         print(f"done in {time.time()-t0:.1f}s", end="", flush=True)
-        
-        print(" computing:", flush=True)
+
+        # Compute quantiles and bins
+        print(" computing...", flush=True)
+        t0 = time.time()
         x_s = da_persisted.stack(gridcell=stack_dims)
-        for nb in n_qbin:
-            print(f"   {nb}", end="", flush=True)
+        qs = xclim.get_quantiles(x_s, nbin, ["gridcell"])
+        bn = xclim.get_bins(x_s, qs, dim="quantile")
+        print(f"done in {time.time()-t0:.1f}s", end="", flush=True)
 
-            qs = xclim.get_quantiles(x_s, nb, ["gridcell"])
-            bn = xclim.get_bins(x_s, qs, dim="quantile")
+        # Add metadata to quantiles
+        qs = qs.rename("x_edge", quantile="qx")
+        qs.attrs = {
+            "long_name": f"edges for x bins: {x_s.name}",
+            "units": x_s.attrs.get('units', ''),
+            "x_long_name": x_s.attrs.get('long_name', ''),
+            "x_description": x_s.attrs.get('description', ''),
+            "x_time_mean": x_s.attrs.get('time_mean', ''),
+        }
+        qs["qx"].attrs = {
+            "long_name": "quantile edges for x bins",
+            "units": "quantile",
+        }
 
-            # Add metadata to quantiles
-            qs = qs.rename(f"x_edge_{nb}", quantile=f"q_{nb}")
-            qs.attrs = {
-                "long_name": f"edges for x bins: {x_s.name}",
-                "units": x_s.attrs.get('units', ''),
-                "x_long_name": x_s.attrs.get('long_name', ''),
-                "x_description": x_s.attrs.get('description', ''),
-                "x_time_mean": x_s.attrs.get('time_mean', ''),
-            }
-            qs[f"q_{nb}"].attrs = {
-                "long_name": "quantile edges for x bins",
-                "units": "quantile",
-            }
-
-            # Add metadata to bins
-            bn = bn.unstack().rename(f"x_bin_{nb}")
-            bn.attrs = {
-                "long_name": f"indices for x bins: {x_s.name}",
-                "units": "index",
-                "x_long_name": x_s.attrs.get('long_name', ''),
-                "x_description": x_s.attrs.get('description', ''),
-                "x_time_mean": x_s.attrs.get('time_mean', ''),
-            }
-            
-            # Combine into a single Dataset
-            qs_bn = xr.merge([qs, bn])
-            qs_bn = qs_bn.assign_coords(
-                {
-                    f'iex_{nb}': np.arange(nb + 1),
-                    f'ix_{nb}': np.arange(nb),
-                }
-            )
-            qs_bn[f"iex_{nb}"].attrs = {
-                "long_name": "index for x edges",
-                "units": "index"
-            }
-            qs_bn[f"ix_{nb}"].attrs = {
-                "long_name": "x bin index",
-                "units": "index",
-            }
-
-            # Drop unwanted variables
-            for var_to_drop in ["ltype", "landunit"]:
-                if var_to_drop in qs_bn.variables:
-                    qs_bn = qs_bn.drop_vars(var_to_drop)
-
-            # Save to NetCDF file
-            t0 = time.time()
-            print(" saving...", end="", flush=True)
-            fname = f"qbin{nb}.{year_start}-{year_end}.TIME{time_tag}.{v}.nc"
-            qs_bn.to_netcdf(vrootdir / fname)
-            print(f"done in {time.time()-t0:.1f}s to {fname}", flush=True)
+        # Add metadata to bins
+        bn = bn.unstack().rename("x_bin")
+        bn.attrs = {
+            "long_name": f"gridcell x bin index: {x_s.name}",
+            "units": "index",
+            "x_long_name": x_s.attrs.get('long_name', ''),
+            "x_description": x_s.attrs.get('description', ''),
+            "x_time_mean": x_s.attrs.get('time_mean', ''),
+        }
         
-        # Free distributed memory
-        client.cancel(da_persisted)
-        del da_persisted
+        # Combine into a single Dataset
+        qs_bn = xr.merge([qs, bn])
+        qs_bn = qs_bn.assign_coords(
+            {
+                'iex': np.arange(nbin + 1),
+                'ix': np.arange(nbin),
+            }
+        )
+        qs_bn["iex"].attrs = {
+            "long_name": "x edge index",
+            "units": "index"
+        }
+        qs_bn["ix"].attrs = {
+            "long_name": "x bin index",
+            "units": "index",
+        }
 
+        # Drop unwanted variables
+        for var_to_drop in ["ltype", "landunit"]:
+            if var_to_drop in qs_bn.variables:
+                qs_bn = qs_bn.drop_vars(var_to_drop)
 
-    #########################
-    #### END COMPUTATION ####
-    #########################
+        # Select directory for output
+        vrootdir = rootdir / f"mask_glc{nonglc_pct_threshold}_snow{snow_pct_threshold}" / v
+        os.makedirs(vrootdir, exist_ok=True)
 
-    client.close()
-    cluster.close()
+        # Save to NetCDF file
+        print(" saving...", end="", flush=True)
+        t0 = time.time()
+        fname = f"qbin{nbin}.{year_start}-{year_end}.TIMEagg.{v}.{str_mem.zfill(3)}.nc"
+        qs_bn.to_netcdf(vrootdir / fname)
+        print(f"done in {time.time()-t0:.1f}s to {fname}", flush=True)
 
 
 if __name__ == "__main__":
-    main()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--member",
+        type=int,
+        required=True,
+        help="member index",
+    )
+    parser.add_argument(
+        "--ncpus",
+        type=int,
+        required=True,
+        help="number of cpus",
+    )
+    parser.add_argument(
+        "--nmem",
+        type=float,
+        required=True,
+        help="memory in GB per cpu",
+    )
+    parser.add_argument(
+        "--nbin",
+        type=int,
+        required=True,
+        help="number of quantile bins (x and y)",
+    )
+    args = parser.parse_args()
+
+    main(
+        member=args.member,
+        ncpus=args.ncpus,
+        nmem=args.nmem,
+        nbin=args.nbin,
+    )
