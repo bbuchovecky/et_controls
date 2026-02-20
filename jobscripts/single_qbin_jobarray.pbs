@@ -6,7 +6,7 @@
 #PBS -l walltime=00:30:00
 #PBS -q develop
 ### Request 27 sub-jobs with array indices spanning 0-26 (input member index, includes default member)
-#PBS -J 0-26
+#PBS -J 1-26
 #PBS -j oe
 #PBS -o logs/
 
