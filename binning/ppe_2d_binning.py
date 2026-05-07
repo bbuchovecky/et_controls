@@ -185,152 +185,8 @@ def _bin_stats_single_member(
 # Public API
 # ---------------------------------------------------------------------------
 
-def compute_2d_bin_stats(
-    target  : xr.DataArray,
-    y_var   : xr.DataArray,
-    x_var   : xr.DataArray,
-    *,
-    member_dim  : Optional[str] = None,
-    n_y_bins : int = 15,
-    n_x_bins : int = 15,
-    y_strategy   : BinStrategy = "quantile",
-    x_strategy   : BinStrategy = "quantile",
-    y_range  : Optional[Tuple[float, float]] = None,
-    x_range  : Optional[Tuple[float, float]] = None,
-    collapse_duplicate_quantile_bins: bool = False,
-    pool_edges_across_ensemble: bool = True,
-    parallel : bool = True,
-) -> xr.DataArray:
-    """
-    Bin `target` into 2-D (y_var x x_var) space and return bin stats.
 
-    Parameters
-    ----------
-    target  : variable to bin
-    y_var   : y-axis binning variable (same shape as target)
-    x_var   : x-axis binning variable (same shape as target)
-    member_dim  : name of member dimension
-    n_y_bins : number of bins along y axis
-    n_x_bins : number of bins along x axis
-    y_strategy : edge strategy for y axis ("quantile" | "linear")
-    x_strategy : edge strategy for x axis ("quantile" | "linear")
-    y_range  : explicit (lo, hi) for y edges; None -> derived from data
-    x_range  : explicit (lo, hi) for x edges; None -> derived from data
-    collapse_duplicate_quantile_bins : if True, remove duplicate quantile
-        edges caused by tied values. This condenses empty bins but may reduce
-        the effective number of bins below n_y_bins/n_x_bins.
-    pool_edges_across_ensemble : if True, edges are computed from the full
-        ensemble pool, guaranteeing identical bin definitions across members.
-        Should be True for cross-member PPE comparison; False is not yet
-        implemented.
-    parallel : dispatch ensemble members as dask.delayed tasks
-
-    Returns
-    -------
-    xr.DataArray, dims=(y_bin, x_bin, member)
-        Coordinates include bin-centre values and bin-edge attributes.
-    """
-    if not pool_edges_across_ensemble:
-        raise NotImplementedError("Per-member edges not yet supported.")
-
-    dim_order = tuple(d for d in target.dims if d != member_dim) + (member_dim,)
-    target = target.transpose(*dim_order)
-    y_var  = y_var.transpose(*dim_order)
-    x_var  = x_var.transpose(*dim_order)
-
-    # Materialise once; tolerated for PPE sizes (typically <10 GB per variable)
-    def _np(da):
-        return da.compute().values if hasattr(da.data, "compute") else da.values
-
-    tgt_np = _np(target)
-    y_np   = _np(y_var)
-    x_np   = _np(x_var)
-
-    # Build edges from pooled finite values
-    y_edges = _build_edges(
-        y_np.ravel(),
-        n_y_bins,
-        y_strategy,
-        y_range,
-        collapse_duplicates=collapse_duplicate_quantile_bins,
-    )
-    x_edges = _build_edges(
-        x_np.ravel(),
-        n_x_bins,
-        x_strategy,
-        x_range,
-        collapse_duplicates=collapse_duplicate_quantile_bins,
-    )
-
-    n_y_eff = len(y_edges) - 1
-    n_x_eff = len(x_edges) - 1
-
-    members   = target.coords[member_dim].values
-    n_members = len(members)
-
-    def _process(m: int) -> np.ndarray:
-        return _bin_stats_single_member(
-            tgt_np[..., m].ravel(),
-            y_np[...,   m].ravel(),
-            x_np[...,   m].ravel(),
-            y_edges, x_edges,
-        )
-
-    if parallel:
-        results = compute(*[delayed(_process)(m) for m in range(n_members)])
-    else:
-        results = [_process(m) for m in range(n_members)]
-
-    result_np = np.stack(results, axis=-1)  # (stats, n_y, n_x, n_members)
-
-    y_centers = 0.5 * (y_edges[:-1] + y_edges[1:])
-    x_centers = 0.5 * (x_edges[:-1] + x_edges[1:])
-
-    # Human-readable quantile labels (used when strategy=="quantile")
-    def _quantile_labels(n):
-        lo = np.linspace(0, 100, n + 1)[:-1]
-        hi = np.linspace(0, 100, n + 1)[1:]
-        return [f"Q{a:.0f}-Q{b:.0f}" for a, b in zip(lo, hi)]
-
-    y_name = y_var.name or "y_var"
-    x_name = x_var.name or "x_var"
-
-    coords = {
-        "stats": np.array(["mean", "var_pop", "var_samp", "count"]),
-        f"{y_name}_bin_center": ("y_bin", y_centers),
-        f"{x_name}_bin_center": ("x_bin", x_centers),
-        member_dim:                   members,
-    }
-    if y_strategy == "quantile":
-        coords[f"{y_name}_bin_label"] = ("y_bin", _quantile_labels(n_y_eff))
-    if x_strategy == "quantile":
-        coords[f"{x_name}_bin_label"] = ("x_bin", _quantile_labels(n_x_eff))
-
-    out = xr.DataArray(
-        result_np,
-        dims=("stats", "y_bin", "x_bin", member_dim),
-        coords=coords,
-        attrs={
-            "long_name"            : f"2-D bin-mean {target.name or 'variable'}",
-            "units"                : target.attrs.get("units", "unknown"),
-            "y_variable"           : y_name,
-            "x_variable"           : x_name,
-            "y_strategy"           : y_strategy,
-            "x_strategy"           : x_strategy,
-            "y_bin_edges"          : y_edges.tolist(),
-            "x_bin_edges"          : x_edges.tolist(),
-            "n_y_bins"             : n_y_eff,
-            "n_x_bins"             : n_x_eff,
-            "n_y_bins_requested"   : n_y_bins,
-            "n_x_bins_requested"   : n_x_bins,
-            "collapse_duplicate_quantile_bins": collapse_duplicate_quantile_bins,
-            "pool_edges"           : pool_edges_across_ensemble,
-        },
-    )
-    return out
-
-
-def compute_2d_bin_stats_single_member(
+def _compute_2d_bin_stats_single_member(
     target  : xr.DataArray,
     y_var   : xr.DataArray,
     x_var   : xr.DataArray,
@@ -445,6 +301,190 @@ def compute_2d_bin_stats_single_member(
             "n_y_bins_requested"   : n_y_bins,
             "n_x_bins_requested"   : n_x_bins,
             "collapse_duplicate_quantile_bins": collapse_duplicate_quantile_bins,
+        },
+    )
+    return out
+
+
+def compute_2d_bin_stats(
+    target  : xr.DataArray,
+    y_var   : xr.DataArray,
+    x_var   : xr.DataArray,
+    *,
+    member_dim  : Optional[str] = None,
+    n_y_bins : int = 15,
+    n_x_bins : int = 15,
+    y_strategy   : BinStrategy = "quantile",
+    x_strategy   : BinStrategy = "quantile",
+    y_range  : Optional[Tuple[float, float]] = None,
+    x_range  : Optional[Tuple[float, float]] = None,
+    collapse_duplicate_quantile_bins: bool = False,
+    pool_edges_across_ensemble: bool = True,
+    parallel : bool = True,
+) -> xr.DataArray:
+    """
+    Bin `target` into 2-D (y_var x x_var) space and return bin stats.
+
+    Parameters
+    ----------
+    target  : variable to bin
+    y_var   : y-axis binning variable (same shape as target)
+    x_var   : x-axis binning variable (same shape as target)
+    member_dim  : name of member dimension
+    n_y_bins : number of bins along y axis
+    n_x_bins : number of bins along x axis
+    y_strategy : edge strategy for y axis ("quantile" | "linear")
+    x_strategy : edge strategy for x axis ("quantile" | "linear")
+    y_range  : explicit (lo, hi) for y edges; None -> derived from data
+    x_range  : explicit (lo, hi) for x edges; None -> derived from data
+    collapse_duplicate_quantile_bins : if True, remove duplicate quantile
+        edges caused by tied values. This condenses empty bins but may reduce
+        the effective number of bins below n_y_bins/n_x_bins.
+    pool_edges_across_ensemble : if True, edges are computed from the full
+        ensemble pool, guaranteeing identical bin definitions across members.
+        Should be True for cross-member PPE comparison; False is not yet
+        implemented.
+    parallel : dispatch ensemble members as dask.delayed tasks
+
+    Returns
+    -------
+    xr.DataArray
+        If a member dimension is present, dims=(stats, y_bin, x_bin, member).
+        Otherwise dims=(stats, y_bin, x_bin).
+        Coordinates include bin-centre values and bin-edge attributes.
+    """
+    has_member_dim = member_dim is not None and member_dim in target.dims
+
+    if not has_member_dim:
+        out = _compute_2d_bin_stats_single_member(
+            target=target,
+            y_var=y_var,
+            x_var=x_var,
+            n_y_bins=n_y_bins,
+            n_x_bins=n_x_bins,
+            y_strategy=y_strategy,
+            x_strategy=x_strategy,
+            y_range=y_range,
+            x_range=x_range,
+            collapse_duplicate_quantile_bins=collapse_duplicate_quantile_bins,
+        )
+        out.attrs["pool_edges"] = False
+        return out
+
+    if not pool_edges_across_ensemble:
+        single_members = []
+        for m in target[member_dim].values:
+            out = _compute_2d_bin_stats_single_member(
+                target=target.sel({member_dim: m}),
+                y_var=y_var.sel({member_dim: m}),
+                x_var=x_var.sel({member_dim: m}),
+                n_y_bins=n_y_bins,
+                n_x_bins=n_x_bins,
+                y_strategy=y_strategy,
+                x_strategy=x_strategy,
+                y_range=y_range,
+                x_range=x_range,
+                collapse_duplicate_quantile_bins=collapse_duplicate_quantile_bins,
+            )
+            single_members.append(out)
+            
+
+        # raise NotImplementedError(
+        #     "Per-member edges are not yet supported for arrays with a member dimension."
+        # )
+
+    dim_order = tuple(d for d in target.dims if d != member_dim) + (member_dim,)
+    target = target.transpose(*dim_order)
+    y_var  = y_var.transpose(*dim_order)
+    x_var  = x_var.transpose(*dim_order)
+
+    # Materialise once; tolerated for PPE sizes (typically <10 GB per variable)
+    def _np(da):
+        return da.compute().values if hasattr(da.data, "compute") else da.values
+
+    tgt_np = _np(target)
+    y_np   = _np(y_var)
+    x_np   = _np(x_var)
+
+    # Build edges from pooled finite values
+    y_edges = _build_edges(
+        y_np.ravel(),
+        n_y_bins,
+        y_strategy,
+        y_range,
+        collapse_duplicates=collapse_duplicate_quantile_bins,
+    )
+    x_edges = _build_edges(
+        x_np.ravel(),
+        n_x_bins,
+        x_strategy,
+        x_range,
+        collapse_duplicates=collapse_duplicate_quantile_bins,
+    )
+
+    n_y_eff = len(y_edges) - 1
+    n_x_eff = len(x_edges) - 1
+
+    members   = target.coords[member_dim].values
+    n_members = len(members)
+
+    def _process(m: int) -> np.ndarray:
+        return _bin_stats_single_member(
+            tgt_np[..., m].ravel(),
+            y_np[...,   m].ravel(),
+            x_np[...,   m].ravel(),
+            y_edges, x_edges,
+        )
+
+    if parallel:
+        results = compute(*[delayed(_process)(m) for m in range(n_members)])
+    else:
+        results = [_process(m) for m in range(n_members)]
+
+    result_np = np.stack(results, axis=-1)  # (stats, n_y, n_x, n_members)
+
+    y_centers = 0.5 * (y_edges[:-1] + y_edges[1:])
+    x_centers = 0.5 * (x_edges[:-1] + x_edges[1:])
+
+    # Human-readable quantile labels (used when strategy=="quantile")
+    def _quantile_labels(n):
+        lo = np.linspace(0, 100, n + 1)[:-1]
+        hi = np.linspace(0, 100, n + 1)[1:]
+        return [f"Q{a:.0f}-Q{b:.0f}" for a, b in zip(lo, hi)]
+
+    y_name = y_var.name or "y_var"
+    x_name = x_var.name or "x_var"
+
+    coords = {
+        "stats": np.array(["mean", "var_pop", "var_samp", "count"]),
+        f"{y_name}_bin_center": ("y_bin", y_centers),
+        f"{x_name}_bin_center": ("x_bin", x_centers),
+        member_dim:                   members,
+    }
+    if y_strategy == "quantile":
+        coords[f"{y_name}_bin_label"] = ("y_bin", _quantile_labels(n_y_eff))
+    if x_strategy == "quantile":
+        coords[f"{x_name}_bin_label"] = ("x_bin", _quantile_labels(n_x_eff))
+
+    out = xr.DataArray(
+        result_np,
+        dims=("stats", "y_bin", "x_bin", member_dim),
+        coords=coords,
+        attrs={
+            "long_name"            : f"2-D bin-mean {target.name or 'variable'}",
+            "units"                : target.attrs.get("units", "unknown"),
+            "y_variable"           : y_name,
+            "x_variable"           : x_name,
+            "y_strategy"           : y_strategy,
+            "x_strategy"           : x_strategy,
+            "y_bin_edges"          : y_edges.tolist(),
+            "x_bin_edges"          : x_edges.tolist(),
+            "n_y_bins"             : n_y_eff,
+            "n_x_bins"             : n_x_eff,
+            "n_y_bins_requested"   : n_y_bins,
+            "n_x_bins_requested"   : n_x_bins,
+            "collapse_duplicate_quantile_bins": collapse_duplicate_quantile_bins,
+            "pool_edges"           : pool_edges_across_ensemble,
         },
     )
     return out
