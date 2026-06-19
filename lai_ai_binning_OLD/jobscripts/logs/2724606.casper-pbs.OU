@@ -1,0 +1,1279 @@
+/glade/u/home/bbuchovecky/.bashrc: line 45: bind: warning: line editing not enabled
+/glade/u/home/bbuchovecky/.bashrc: line 45: bind: warning: line editing not enabled
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/distributed/node.py:188: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 35373 instead
+  warnings.warn(
+Python version: 3.12.12 | packaged by conda-forge | (main, Jan 26 2026, 23:51:32) [GCC 14.3.0]
+ncpus: 2
+memory_per_worker: 8GB
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 16:45:32,815 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-c71a51b7e8b2a96d400996f8688928a2', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-c71a51b7e8b2a96d400996f8688928a2', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-c71a51b7e8b2a96d400996f8688928a2', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-c71a51b7e8b2a96d400996f8688928a2', 0, 0, 0, 0))
+old dependencies: {('getitem-ab25e9ba560e4e2e0d18ffd1c842688e', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-c71a51b7e8b2a96d400996f8688928a2', 0, 0, 0, 0)})
+
+2026-03-07 16:45:32,818 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-4ee67a21351e1a81f2c0da8f8ac70c2e', 12, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-4ee67a21351e1a81f2c0da8f8ac70c2e', 12, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-4ee67a21351e1a81f2c0da8f8ac70c2e', 12, 0, 0, 0)->('getitem-rechunk-merge-transpose-4ee67a21351e1a81f2c0da8f8ac70c2e', 12, 0, 0, 0))
+old dependencies: {('getitem-fbca2f4e26a83ba21e11811071c931dc', 12, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-4ee67a21351e1a81f2c0da8f8ac70c2e', 12, 0, 0, 0)})
+
+2026-03-07 16:46:21,911 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-9fbaad57ab9375641ca0dd50e0428f84', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+2026-03-07 16:47:56,487 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-fd0da61f9100cb85ee5e5d049100b92c', 20, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-fd0da61f9100cb85ee5e5d049100b92c', 20, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-fd0da61f9100cb85ee5e5d049100b92c', 20, 0, 0, 0)->('getitem-rechunk-merge-transpose-fd0da61f9100cb85ee5e5d049100b92c', 20, 0, 0, 0))
+old dependencies: {('getitem-75fcb2a5bb848b20cd4a60551c5bcfca', 20, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-fd0da61f9100cb85ee5e5d049100b92c', 20, 0, 0, 0)})
+
+2026-03-07 16:47:56,490 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-5a6fce44e4313cdcaf1665a25431037c', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-5a6fce44e4313cdcaf1665a25431037c', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-5a6fce44e4313cdcaf1665a25431037c', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-5a6fce44e4313cdcaf1665a25431037c', 0, 0, 0, 0))
+old dependencies: {('getitem-0fd5341f61d726ddddf7264ca879ca09', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-5a6fce44e4313cdcaf1665a25431037c', 0, 0, 0, 0)})
+
+2026-03-07 16:48:42,898 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-cad58517276ba55d46c755aa2afe2f2c', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+2026-03-07 16:50:15,098 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-5b4654a3f42bd257436e2ce8f0ed7319', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-5b4654a3f42bd257436e2ce8f0ed7319', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-5b4654a3f42bd257436e2ce8f0ed7319', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-5b4654a3f42bd257436e2ce8f0ed7319', 0, 0, 0, 0))
+old dependencies: {('getitem-cee75eda1f33cc2a85d6046fb8a9f2ab', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-5b4654a3f42bd257436e2ce8f0ed7319', 0, 0, 0, 0)})
+
+2026-03-07 16:50:15,102 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-e09e6f7b1805c9fffd228f6721c8f746', 7, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-e09e6f7b1805c9fffd228f6721c8f746', 7, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-e09e6f7b1805c9fffd228f6721c8f746', 7, 0, 0, 0)->('getitem-rechunk-merge-transpose-e09e6f7b1805c9fffd228f6721c8f746', 7, 0, 0, 0))
+old dependencies: {('getitem-9ac374d5b735920208804bed12b683b6', 7, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-e09e6f7b1805c9fffd228f6721c8f746', 7, 0, 0, 0)})
+
+2026-03-07 16:51:03,420 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-6486ab04044da13a7f79cb5d8b3f836d', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 16:52:39,793 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-dd539b0fb44d2332d973becf10155ae5', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-dd539b0fb44d2332d973becf10155ae5', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-dd539b0fb44d2332d973becf10155ae5', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-dd539b0fb44d2332d973becf10155ae5', 0, 0, 0, 0))
+old dependencies: {('getitem-04e4d822b55a2fad63644cf724236ae1', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-dd539b0fb44d2332d973becf10155ae5', 0, 0, 0, 0)})
+
+2026-03-07 16:52:39,795 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-8b03ba083ce6ad22bbfca14b93298252', 20, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-8b03ba083ce6ad22bbfca14b93298252', 20, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-8b03ba083ce6ad22bbfca14b93298252', 20, 0, 0, 0)->('getitem-rechunk-merge-transpose-8b03ba083ce6ad22bbfca14b93298252', 20, 0, 0, 0))
+old dependencies: {('getitem-53c75d3d3a47b5b59527d1baf8a1b6f4', 20, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-8b03ba083ce6ad22bbfca14b93298252', 20, 0, 0, 0)})
+
+2026-03-07 16:53:29,912 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-6b78a18ab5c65aee9b93bea40b026aed', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+2026-03-07 16:55:05,384 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-b1f45abbcaadd9c4fa51c8e1a04297b8', 5, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-b1f45abbcaadd9c4fa51c8e1a04297b8', 5, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-b1f45abbcaadd9c4fa51c8e1a04297b8', 5, 0, 0, 0)->('getitem-rechunk-merge-transpose-b1f45abbcaadd9c4fa51c8e1a04297b8', 5, 0, 0, 0))
+old dependencies: {('getitem-52b720b4aa3588a54f811da7e7ac9f38', 5, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-b1f45abbcaadd9c4fa51c8e1a04297b8', 5, 0, 0, 0)})
+
+2026-03-07 16:55:05,387 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-2e19c6f8679dd37131e18295c998dcdb', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-2e19c6f8679dd37131e18295c998dcdb', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-2e19c6f8679dd37131e18295c998dcdb', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-2e19c6f8679dd37131e18295c998dcdb', 0, 0, 0, 0))
+old dependencies: {('getitem-c5a2f07bc3c14314adef5039ed74e53b', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-2e19c6f8679dd37131e18295c998dcdb', 0, 0, 0, 0)})
+
+2026-03-07 16:55:52,566 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-3495f518343232737ba3460b8bbf4b65', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 16:57:54,549 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-3100989bf044bbaec74c414b40456a99', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-3100989bf044bbaec74c414b40456a99', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-3100989bf044bbaec74c414b40456a99', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-3100989bf044bbaec74c414b40456a99', 0, 0, 0, 0))
+old dependencies: {('getitem-66e53b35b81bec1f03451ac099a35c41', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-3100989bf044bbaec74c414b40456a99', 0, 0, 0, 0)})
+
+2026-03-07 16:57:54,553 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-a9f5818cd62e39fccc5406969d1fdfa2', 9, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-a9f5818cd62e39fccc5406969d1fdfa2', 9, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-a9f5818cd62e39fccc5406969d1fdfa2', 9, 0, 0, 0)->('getitem-rechunk-merge-transpose-a9f5818cd62e39fccc5406969d1fdfa2', 9, 0, 0, 0))
+old dependencies: {('getitem-1d3dd617172ecba53e6a0befaa0a40be', 9, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-a9f5818cd62e39fccc5406969d1fdfa2', 9, 0, 0, 0)})
+
+2026-03-07 16:58:40,604 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-e58b26a3edd373f427bf321335be2028', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 17:00:16,779 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-08eb9415f44d7324ae5a2f9897416079', 8, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-08eb9415f44d7324ae5a2f9897416079', 8, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-08eb9415f44d7324ae5a2f9897416079', 8, 0, 0, 0)->('getitem-rechunk-merge-transpose-08eb9415f44d7324ae5a2f9897416079', 8, 0, 0, 0))
+old dependencies: {('getitem-2b34122e9397ac62ef527deefd3439f7', 8, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-08eb9415f44d7324ae5a2f9897416079', 8, 0, 0, 0)})
+
+2026-03-07 17:00:16,782 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-2884d478888e7217eb96a0dd47de8e09', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-2884d478888e7217eb96a0dd47de8e09', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-2884d478888e7217eb96a0dd47de8e09', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-2884d478888e7217eb96a0dd47de8e09', 0, 0, 0, 0))
+old dependencies: {('getitem-c983844dfe5596dacda3896b3d8ac25d', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-2884d478888e7217eb96a0dd47de8e09', 0, 0, 0, 0)})
+
+2026-03-07 17:01:07,686 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-b900364d5a027e7c170c2f51e9827be2', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: invalid value encountered in divide
+  return self.func(*new_argspec)
+2026-03-07 17:03:12,639 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-3390e7a916ca0ffe1b63c167ae970289', 13, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-3390e7a916ca0ffe1b63c167ae970289', 13, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-3390e7a916ca0ffe1b63c167ae970289', 13, 0, 0, 0)->('getitem-rechunk-merge-transpose-3390e7a916ca0ffe1b63c167ae970289', 13, 0, 0, 0))
+old dependencies: {('getitem-c2aee6928cbea7824aafe3392735cdff', 13, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-3390e7a916ca0ffe1b63c167ae970289', 13, 0, 0, 0)})
+
+2026-03-07 17:03:12,643 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-e89c391f8aa6dc47a67bb0420e3a17a5', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-e89c391f8aa6dc47a67bb0420e3a17a5', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-e89c391f8aa6dc47a67bb0420e3a17a5', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-e89c391f8aa6dc47a67bb0420e3a17a5', 0, 0, 0, 0))
+old dependencies: {('getitem-e5d41ac3ee15faae0b7d2e4e1619297f', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-e89c391f8aa6dc47a67bb0420e3a17a5', 0, 0, 0, 0)})
+
+2026-03-07 17:04:00,719 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-722b80f3e8fcf13b98457784b335f587', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/_task_spec.py:768: RuntimeWarning: divide by zero encountered in divide
+  return self.func(*new_argspec)
+2026-03-07 17:05:34,784 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-400a244f77ea802ee44c69d51262e167', 10, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-400a244f77ea802ee44c69d51262e167', 10, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-400a244f77ea802ee44c69d51262e167', 10, 0, 0, 0)->('getitem-rechunk-merge-transpose-400a244f77ea802ee44c69d51262e167', 10, 0, 0, 0))
+old dependencies: {('getitem-42abbf15d547ae10cf66832ed8b0aab8', 10, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-400a244f77ea802ee44c69d51262e167', 10, 0, 0, 0)})
+
+2026-03-07 17:05:34,785 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-f30052011d106165bdb890555ea22312', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-f30052011d106165bdb890555ea22312', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-f30052011d106165bdb890555ea22312', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-f30052011d106165bdb890555ea22312', 0, 0, 0, 0))
+old dependencies: {('getitem-f6f39f519a8b7e4bd963365535b50692', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-f30052011d106165bdb890555ea22312', 0, 0, 0, 0)})
+
+2026-03-07 17:06:22,635 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-35ffe8040d91c07add46e8d49ee3183c', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 17:08:24,879 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-c23fe9d871be49a4c617fc9b69974d8c', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-c23fe9d871be49a4c617fc9b69974d8c', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-c23fe9d871be49a4c617fc9b69974d8c', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-c23fe9d871be49a4c617fc9b69974d8c', 0, 0, 0, 0))
+old dependencies: {('getitem-7636003b04d0b650218b89b10896ec9c', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-c23fe9d871be49a4c617fc9b69974d8c', 0, 0, 0, 0)})
+
+2026-03-07 17:08:24,882 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-d7f9b78c08e5a0e11fc6e2170e362c80', 21, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-d7f9b78c08e5a0e11fc6e2170e362c80', 21, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-d7f9b78c08e5a0e11fc6e2170e362c80', 21, 0, 0, 0)->('getitem-rechunk-merge-transpose-d7f9b78c08e5a0e11fc6e2170e362c80', 21, 0, 0, 0))
+old dependencies: {('getitem-97ca34fee823a9cb20b4f10a31a30e80', 21, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-d7f9b78c08e5a0e11fc6e2170e362c80', 21, 0, 0, 0)})
+
+2026-03-07 17:09:11,995 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-9c057104311a1b1291743b7a8e1fcf67', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 17:10:48,974 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-a4fc4cd4d5512bf94ce7c89c7387a50d', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-a4fc4cd4d5512bf94ce7c89c7387a50d', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-a4fc4cd4d5512bf94ce7c89c7387a50d', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-a4fc4cd4d5512bf94ce7c89c7387a50d', 0, 0, 0, 0))
+old dependencies: {('getitem-8042dd76cc463f90bdad762d9d75b530', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-a4fc4cd4d5512bf94ce7c89c7387a50d', 0, 0, 0, 0)})
+
+2026-03-07 17:10:48,975 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-d8f07934b3a7664549ccb1e4927e0914', 16, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-d8f07934b3a7664549ccb1e4927e0914', 16, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-d8f07934b3a7664549ccb1e4927e0914', 16, 0, 0, 0)->('getitem-rechunk-merge-transpose-d8f07934b3a7664549ccb1e4927e0914', 16, 0, 0, 0))
+old dependencies: {('getitem-1e047bd3584708f74fff414db15d5fe1', 16, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-d8f07934b3a7664549ccb1e4927e0914', 16, 0, 0, 0)})
+
+2026-03-07 17:11:38,497 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-fca7c1dff1dfa8ef46479159d01d9d88', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 17:13:17,754 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-5791718be5875056dae7fc45902e6a84', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-5791718be5875056dae7fc45902e6a84', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-5791718be5875056dae7fc45902e6a84', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-5791718be5875056dae7fc45902e6a84', 0, 0, 0, 0))
+old dependencies: {('getitem-09284e58ba7bb416e06f0d499cdc128f', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-5791718be5875056dae7fc45902e6a84', 0, 0, 0, 0)})
+
+2026-03-07 17:13:17,758 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-b32f6dd45b603b608baf305e99e9e60f', 12, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-b32f6dd45b603b608baf305e99e9e60f', 12, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-b32f6dd45b603b608baf305e99e9e60f', 12, 0, 0, 0)->('getitem-rechunk-merge-transpose-b32f6dd45b603b608baf305e99e9e60f', 12, 0, 0, 0))
+old dependencies: {('getitem-469d0619e140c5dd15959c17cacfd4ee', 12, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-b32f6dd45b603b608baf305e99e9e60f', 12, 0, 0, 0)})
+
+2026-03-07 17:14:07,899 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-29fbf119c427ecbb44f0ea2fd060718a', 0, 0, 0, 0)})
+
+2026-03-07 17:16:04,713 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-6198f6f9e1b76d5cae28725692f36c47', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-6198f6f9e1b76d5cae28725692f36c47', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-6198f6f9e1b76d5cae28725692f36c47', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-6198f6f9e1b76d5cae28725692f36c47', 0, 0, 0, 0))
+old dependencies: {('getitem-fef563a0637f3c4e94370d9b93879998', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-6198f6f9e1b76d5cae28725692f36c47', 0, 0, 0, 0)})
+
+2026-03-07 17:16:04,716 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-8c1e7202960f01056cac80d40ee39b2e', 17, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-8c1e7202960f01056cac80d40ee39b2e', 17, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-8c1e7202960f01056cac80d40ee39b2e', 17, 0, 0, 0)->('getitem-rechunk-merge-transpose-8c1e7202960f01056cac80d40ee39b2e', 17, 0, 0, 0))
+old dependencies: {('getitem-4b521ef3de03d83e5d803451dd07256b', 17, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-8c1e7202960f01056cac80d40ee39b2e', 17, 0, 0, 0)})
+
+2026-03-07 17:16:53,546 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-ba7df58a1b9c0a31c6531ef7f3623105', 0, 0, 0, 0)})
+
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+/glade/work/bbuchovecky/miniforge3/envs/data-sci-py312/lib/python3.12/site-packages/dask/array/numpy_compat.py:61: RuntimeWarning: invalid value encountered in divide
+  x = np.divide(x1, x2, out)
+2026-03-07 17:19:01,919 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-95de6f223b56fa163884852d3aa427b8', 7, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-95de6f223b56fa163884852d3aa427b8', 7, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-95de6f223b56fa163884852d3aa427b8', 7, 0, 0, 0)->('getitem-rechunk-merge-transpose-95de6f223b56fa163884852d3aa427b8', 7, 0, 0, 0))
+old dependencies: {('getitem-47634dfb6e99a8039797b0ff0af2cf77', 7, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-95de6f223b56fa163884852d3aa427b8', 7, 0, 0, 0)})
+
+2026-03-07 17:19:01,922 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-9e610fe4287ff53045162ba46ee5c8fc', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-9e610fe4287ff53045162ba46ee5c8fc', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-9e610fe4287ff53045162ba46ee5c8fc', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-9e610fe4287ff53045162ba46ee5c8fc', 0, 0, 0, 0))
+old dependencies: {('getitem-a80acc156884346eecea9deccf357624', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-9e610fe4287ff53045162ba46ee5c8fc', 0, 0, 0, 0)})
+
+2026-03-07 17:19:48,729 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-457dfeb96c90fa72162e9bdaac7331a2', 0, 0, 0, 0)})
+
+2026-03-07 17:21:28,417 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('transpose-f488f1eb05227f6bf47f14446479f97b', 16, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('transpose-f488f1eb05227f6bf47f14446479f97b', 16, 0, 0, 0) transpose(..., ...)>
+new run_spec: Alias(('transpose-f488f1eb05227f6bf47f14446479f97b', 16, 0, 0, 0)->('getitem-rechunk-merge-transpose-f488f1eb05227f6bf47f14446479f97b', 16, 0, 0, 0))
+old dependencies: {('getitem-2f42e193ec28039386b545479363074d', 16, 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-transpose-f488f1eb05227f6bf47f14446479f97b', 16, 0, 0, 0)})
+
+2026-03-07 17:21:28,421 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('broadcast_to-8338bd04b59b89271a547d75b88db0fc', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: <Task ('broadcast_to-8338bd04b59b89271a547d75b88db0fc', 0, 0, 0, 0) broadcast_to(...)>
+new run_spec: Alias(('broadcast_to-8338bd04b59b89271a547d75b88db0fc', 0, 0, 0, 0)->('getitem-rechunk-merge-broadcast_to-8338bd04b59b89271a547d75b88db0fc', 0, 0, 0, 0))
+old dependencies: {('getitem-09923ca53cbcdba888fd45f31c3cea80', 0, 0, 0)}
+new dependencies: frozenset({('getitem-rechunk-merge-broadcast_to-8338bd04b59b89271a547d75b88db0fc', 0, 0, 0, 0)})
+
+2026-03-07 17:22:17,497 - distributed.scheduler - WARNING - Detected different `run_spec` for key ('rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0) between two consecutive calls to `update_graph`. This can cause failures and deadlocks down the line. Please ensure unique key names. If you are using a standard dask collections, consider releasing all the data before resubmitting another computation. More details and help can be found at https://github.com/dask/dask/issues/9888. 
+Debugging information
+---------------------
+old task state: released
+old run_spec: Alias(('rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0)->('rechunk-split-rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0))
+new run_spec: Alias(('rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0)->('array-rechunk-split-rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0))
+old dependencies: {('rechunk-split-rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0)}
+new dependencies: frozenset({('array-rechunk-split-rechunk-merge-d1535d4ef4a33a5a29b4e2b39584272d', 0, 0, 0, 0)})
+
+2026-03-07 17:23:25,676 - distributed.nanny - WARNING - Worker process still alive after 4.0 seconds, killing
+2026-03-07 17:23:25,679 - distributed.nanny - WARNING - Worker process still alive after 4.0 seconds, killing
+Dask dashboard: http://127.0.0.1:35373/status
+Workers: 2, Memory per worker: 8GB
+RAIN_FROM_ATM_month_1
+QOVER_month_1
+QRUNOFF_month_1
+EFLX_LH_TOT_month_1
+FCTR_month_1
+FCEV_month_1
+FGEV_month_1
+TLAI_month_1
+GPP_month_1
+TSA_month_1
+FSH_month_1
+FIRE_month_1
+FLDS_month_1
+FSR_month_1
+FSDS_month_1

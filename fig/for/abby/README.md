@@ -13,3 +13,11 @@
 - I placed all bare soil grid cells (LAI = 0) into the lowest quantile bin so it has a higher sample count than the other bins. However, I believe this is still better than the bare soil grid cells being distributed randomly across multiple lower quantile bins that all have LAI = 0.
 - For each bin mean, I performed a two-sided t-test against a null hypothesis of 0 at alpha=0.05. Statistically insignificant bins are masked out. This assumes i.i.d. samples within each bin, which is a potentially faulty assumption if there is strong spatial or temporal correlation between bin samples. More complex techniques such as block bootstrapping or applying a spatial decorrelation adjustment to the effective degrees of freedom could be implemented for a more robust test.
 - The radius of the circles is proportional to the number of grid cell samples in the bin.
+
+## Zonal mean
+
+- filename = `d.zonal.*`
+
+## Multiple linear regressions
+
+- 
