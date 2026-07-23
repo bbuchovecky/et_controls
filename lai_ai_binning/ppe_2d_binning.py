@@ -300,7 +300,7 @@ def _compute_2d_bin_stats_single_member(
             "n_x_bins"             : n_x_eff,
             "n_y_bins_requested"   : n_y_bins,
             "n_x_bins_requested"   : n_x_bins,
-            "collapse_duplicate_quantile_bins": collapse_duplicate_quantile_bins,
+            "collapse_duplicate_quantile_bins": int(collapse_duplicate_quantile_bins),
         },
     )
     return out
@@ -372,26 +372,25 @@ def compute_2d_bin_stats(
         return out
 
     if not pool_edges_across_ensemble:
-        single_members = []
-        for m in target[member_dim].values:
-            out = _compute_2d_bin_stats_single_member(
-                target=target.sel({member_dim: m}),
-                y_var=y_var.sel({member_dim: m}),
-                x_var=x_var.sel({member_dim: m}),
-                n_y_bins=n_y_bins,
-                n_x_bins=n_x_bins,
-                y_strategy=y_strategy,
-                x_strategy=x_strategy,
-                y_range=y_range,
-                x_range=x_range,
-                collapse_duplicate_quantile_bins=collapse_duplicate_quantile_bins,
-            )
-            single_members.append(out)
-            
-
-        # raise NotImplementedError(
-        #     "Per-member edges are not yet supported for arrays with a member dimension."
-        # )
+        raise NotImplementedError(
+            "Per-member bin edges are not yet supported. Set "
+            "pool_edges_across_ensemble=True to compute pooled edges across members."
+        )
+        # single_members = []
+        # for m in target[member_dim].values:
+        #     out = _compute_2d_bin_stats_single_member(
+        #         target=target.sel({member_dim: m}),
+        #         y_var=y_var.sel({member_dim: m}),
+        #         x_var=x_var.sel({member_dim: m}),
+        #         n_y_bins=n_y_bins,
+        #         n_x_bins=n_x_bins,
+        #         y_strategy=y_strategy,
+        #         x_strategy=x_strategy,
+        #         y_range=y_range,
+        #         x_range=x_range,
+        #         collapse_duplicate_quantile_bins=collapse_duplicate_quantile_bins,
+        #     )
+        #     single_members.append(out)
 
     dim_order = tuple(d for d in target.dims if d != member_dim) + (member_dim,)
     target = target.transpose(*dim_order)
@@ -468,6 +467,7 @@ def compute_2d_bin_stats(
 
     out = xr.DataArray(
         result_np,
+        name=target.name or "variable",
         dims=("stats", "y_bin", "x_bin", member_dim),
         coords=coords,
         attrs={
@@ -483,8 +483,8 @@ def compute_2d_bin_stats(
             "n_x_bins"             : n_x_eff,
             "n_y_bins_requested"   : n_y_bins,
             "n_x_bins_requested"   : n_x_bins,
-            "collapse_duplicate_quantile_bins": collapse_duplicate_quantile_bins,
-            "pool_edges"           : pool_edges_across_ensemble,
+            "collapse_duplicate_quantile_bins": int(collapse_duplicate_quantile_bins),
+            "pool_edges"           : int(pool_edges_across_ensemble),
         },
     )
     return out

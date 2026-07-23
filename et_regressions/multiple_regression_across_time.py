@@ -27,45 +27,54 @@ import xarray as xr
 import xclimate as xclim
 
 OUTDIR = Path("/glade/derecho/scratch/bbuchovecky/derived/mlr")
-OUTNAME = "mlr_time_gridpoint_masked_tempnorm_noFSDS_1950-2014.nc"
+OUTNAME = "mlr_time_gridpoint_masked_onlyTLAI_1950-2014.nc"
 
 # Variables to load
 VARIABLES = [
     "EFLX_LH_TOT_month_1",
-    "TSA_month_1",
+    # "TSA_month_1",
     "TLAI_month_1",
-    "RAIN_FROM_ATM_month_1",
+    # "RAIN_FROM_ATM_month_1",
     # "FSDS_month_1",
 ]
 
 PREDICTORS = [
     "TLAI_month_1",
-    "TSA_month_1",
-    "RAIN_FROM_ATM_month_1",
+    # "TSA_month_1",
+    # "RAIN_FROM_ATM_month_1",
     # "FSDS_month_1",
 ]
 COEFF_NAMES = ["intercept"] + [p.replace("_month_1", "") for p in PREDICTORS]
 
-NORMALIZE_TARGET_BY_MEAN_TEMP = True
+NORMALIZE_TARGET_BY_MEAN_TEMP = False
+
+USE_DASK_CLUSTER = False
 
 # Time period for analysis
 START_TIME = "1950-01"
 END_TIME = "2014-12"
 
-print("Creating Dask cluster...")
-CLIENT_CLUSTER = xclim.create_dask_cluster(
-    account='UWAS0155',
-    nworkers=4,
-    ncores=1,
-    nmem='10GB',
-    walltime='02:00:00',
-)
+# Minimum average growing-season LAI, 0.15 is from Forzieri et al. (2020)
+GRSN_LAI_MIN_THRESHOLD = 0.15
+
+
+#################################
+#################################
+
+
+CLIENT_CLUSTER = None
+if USE_DASK_CLUSTER:
+    print("Creating Dask cluster...")
+    CLIENT_CLUSTER = xclim.create_dask_cluster(
+        account='UWAS0155',
+        nworkers=4,
+        ncores=1,
+        nmem='10GB',
+        walltime='02:00:00',
+    )
 
 # Load grid
 grid = xclim.load_fhist_ppe_grid().compute()
-
-# Minimum average growing-season LAI, 0.15 is from Forzieri et al. (2020)
-GRSN_LAI_MIN_THRESHOLD = 0.15
 
 print(f"Loading variables from {START_TIME} to {END_TIME}...")
 data = {}
@@ -96,44 +105,48 @@ data_annual = {}
 print("Computing annual mean ET...")
 data_annual['EFLX_LH_TOT_month_1'] = (data['EFLX_LH_TOT_month_1'] * weights).groupby('time.year').sum()
 
-# # Compute annual mean FSDS
-# print("Computing annual mean FSDS...")
-# data_annual['FSDS_month_1'] = (data['FSDS_month_1'] * weights).groupby('time.year').sum()
+if "FSDS_month_1" in PREDICTORS:
+    # Compute annual mean FSDS
+    print("Computing annual mean FSDS...")
+    data_annual['FSDS_month_1'] = (data['FSDS_month_1'] * weights).groupby('time.year').sum()
 
-# Compute annual mean TSA
-print("Computing annual mean TSA...")
-data_annual['TSA_month_1'] = (data['TSA_month_1'] * weights).groupby('time.year').sum()
+if "TSA_month_1" in PREDICTORS:
+    # Compute annual mean TSA
+    print("Computing annual mean TSA...")
+    data_annual['TSA_month_1'] = (data['TSA_month_1'] * weights).groupby('time.year').sum()
 
-# Compute annual cumulative RAIN_FROM_ATM (mm/s -> mm/year)
-print("Computing annual cumulative RAIN_FROM_ATM...")
-days_per_month = data['RAIN_FROM_ATM_month_1'].time.dt.days_in_month
-data_annual['RAIN_FROM_ATM_month_1'] = (data['RAIN_FROM_ATM_month_1'] * days_per_month * 86400).groupby('time.year').sum()
+if "RAIN_FROM_ATM_month_1" in PREDICTORS:
+    # Compute annual cumulative RAIN_FROM_ATM (mm/s -> mm/year)
+    print("Computing annual cumulative RAIN_FROM_ATM...")
+    days_per_month = data['RAIN_FROM_ATM_month_1'].time.dt.days_in_month
+    data_annual['RAIN_FROM_ATM_month_1'] = (data['RAIN_FROM_ATM_month_1'] * days_per_month * 86400).groupby('time.year').sum()
 
-# Compute annual growing-season mean TLAI
-print("Computing growing-season mean TLAI...")
-lai = data['TLAI_month_1']
-climlai = lai.groupby('time.month').mean()
-climlai_max = climlai.max(dim='month')
-climlai_rng = climlai.max(dim='month') - climlai.min(dim='month')
-threshlai = climlai_max - 0.5 * climlai_rng
-grsn_mask = climlai >= threshlai
+if "TLAI_month_1" in PREDICTORS:
+    # Compute annual growing-season mean TLAI
+    print("Computing growing-season mean TLAI...")
+    lai = data['TLAI_month_1']
+    climlai = lai.groupby('time.month').mean()
+    climlai_max = climlai.max(dim='month')
+    climlai_rng = climlai.max(dim='month') - climlai.min(dim='month')
+    threshlai = climlai_max - 0.5 * climlai_rng
+    grsn_mask = climlai >= threshlai
 
-grsn_lai = lai.assign_coords(month=('time', lai.time.dt.month.values))
-grsn_lai_ym = (
-    grsn_lai.assign_coords(year=('time', lai.time.dt.year.values))
-    .set_index(time=['year', 'month'])
-    .unstack('time')
-    .transpose('member', 'year', 'month', 'lat', 'lon')
-)
-grsn_lai_masked = grsn_lai_ym.where(grsn_mask).transpose('member', 'year', 'month', 'lat', 'lon')
-data_annual['TLAI_month_1'] = grsn_lai_masked.mean(dim='month', skipna=True).transpose('member', 'year', 'lat', 'lon')
+    grsn_lai = lai.assign_coords(month=('time', lai.time.dt.month.values))
+    grsn_lai_ym = (
+        grsn_lai.assign_coords(year=('time', lai.time.dt.year.values))
+        .set_index(time=['year', 'month'])
+        .unstack('time')
+        .transpose('member', 'year', 'month', 'lat', 'lon')
+    )
+    grsn_lai_masked = grsn_lai_ym.where(grsn_mask).transpose('member', 'year', 'month', 'lat', 'lon')
+    data_annual['TLAI_month_1'] = grsn_lai_masked.mean(dim='month', skipna=True).transpose('member', 'year', 'lat', 'lon')
 
-# Mask out low growing-season LAI
-print("Masking out low growing-season LAI and computing annual values...")
-grsn_lai_tmean = data_annual['TLAI_month_1'].mean(dim='year').compute()
-grsn_lai_min_mask = grsn_lai_tmean > GRSN_LAI_MIN_THRESHOLD
-for v, da in data_annual.items():
-    data_annual[v] = data_annual[v].where(grsn_lai_min_mask).compute()
+    # Mask out low growing-season LAI
+    print("Masking out low growing-season LAI and computing annual values...")
+    grsn_lai_tmean = data_annual['TLAI_month_1'].mean(dim='year').compute()
+    grsn_lai_min_mask = grsn_lai_tmean > GRSN_LAI_MIN_THRESHOLD
+    for v, da in data_annual.items():
+        data_annual[v] = data_annual[v].where(grsn_lai_min_mask).compute()
 
 # Extract target
 target = data_annual["EFLX_LH_TOT_month_1"]
@@ -318,8 +331,8 @@ ds_out.to_netcdf(out_file)
 print(f"Coefficients and metrics saved to {out_file}")
 
 # Close Dask cluster
-print("\nClosing Dask cluster...")
 if CLIENT_CLUSTER is not None:
+    print("\nClosing Dask cluster...")
     xclim.close_dask_cluster(CLIENT_CLUSTER)
 
 print("Done!")

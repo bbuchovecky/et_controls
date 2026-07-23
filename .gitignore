@@ -1,5 +1,4 @@
-jobscripts/logs
-
 __pycache__/
 
 dask-worker*
+**/logs/
