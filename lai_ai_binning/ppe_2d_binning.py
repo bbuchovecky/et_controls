@@ -154,6 +154,11 @@ def _bin_stats_single_member(
     # Joint validity mask: exclude NaN in any of the three fields
     valid = np.isfinite(target_flat) & np.isfinite(y_flat) & np.isfinite(x_flat)
 
+    print(f"target_flat: all {len(target_flat)} -> valid {np.isfinite(target_flat).sum()} -> dropped {len(target_flat) - np.isfinite(target_flat).sum()}")
+    print(f"y_flat: all {len(y_flat)} -> valid {np.isfinite(y_flat).sum()} -> dropped {len(y_flat) - np.isfinite(y_flat).sum()}")
+    print(f"x_flat: all {len(x_flat)} -> valid {np.isfinite(x_flat).sum()} -> dropped {len(x_flat) - np.isfinite(x_flat).sum()}")
+    print(f"all valid: {valid.sum()}")
+
     v = target_flat[valid]
     lin_idx    = y_idx[valid] * n_x + x_idx[valid]
     total_bins = n_y * n_x
@@ -220,7 +225,7 @@ def _compute_2d_bin_stats_single_member(
     Returns
     -------
     xr.DataArray, dims=(y_bin, x_bin, member_dim)
-        Coordinates include bin-centre values and bin-edge attributes.
+        Coordinates include bin-center values and bin-edge attributes.
     """
     # dim_order = target.dims
     # target = target.transpose(*dim_order)

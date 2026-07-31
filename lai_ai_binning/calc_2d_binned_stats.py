@@ -418,21 +418,21 @@ def plot_binned_mean(
         Patch(facecolor=color, label=cat) for cat, color in categories.items()
     ]
 
-    # Add legend using figure coordinates
-    fig.legend(
-        handles=legend_handles,
-        ncols=3,
-        loc="lower right",
-        bbox_to_anchor=(0.98, 0.15),
-        bbox_transform=fig.transFigure,
-        frameon=True,
-        fontsize=12,
-        title="Functional Categories",
-        title_fontproperties={
-            "weight": "bold",
-            "size": 12,
-        },
-    )
+    # # Add legend using figure coordinates
+    # fig.legend(
+    #     handles=legend_handles,
+    #     ncols=3,
+    #     loc="lower right",
+    #     bbox_to_anchor=(0.98, 0.15),
+    #     bbox_transform=fig.transFigure,
+    #     frameon=True,
+    #     fontsize=12,
+    #     title="Functional Categories",
+    #     title_fontproperties={
+    #         "weight": "bold",
+    #         "size": 12,
+    #     },
+    # )
 
     # Draw the figure to apply and fix layout
     fig.canvas.draw()
@@ -798,7 +798,9 @@ def main() -> None:
                 if "inv" in args.ai_options:
                     da = compute_inverse_aridity_index(precip, pet, clip=to_clip)
                 else:
-                    da = compute_aridity_index(precip, pet, clip=to_clip)                
+                    da = compute_aridity_index(precip, pet, clip=to_clip)
+
+                quick_map(da.isel(member=0), fig_path / f"{fstem}.{var}.png")
                 
             else:
                 if "year" in var:
@@ -811,7 +813,7 @@ def main() -> None:
                         grid=grid,
                         mask=mask,
                     )
-                    da = compute_annual_mean(da)
+                    da = compute_annual_mean(da).where(mask)
 
                 else:
                     da = load_fhist_variable(
@@ -929,13 +931,27 @@ def main() -> None:
         # Write output
         # ------------------------------------------------------------------
         bin_stats.to_netcdf(out_path / f"{fstem}.nc")
-        print(f"Wrote {out_path / f"{fstem}.nc"}")
+        print(f"Wrote {out_path / fstem}.nc")
 
 
         # ------------------------------------------------------------------
         # Create summary plot
         # ------------------------------------------------------------------
         signif_mask = test_significance(bin_stats, alpha=ALPHA, n_min=N_MIN)
+
+        if args.op == "diff":
+            vabs = max(
+                [
+                    abs(bin_stats.sel(stats='mean').where(signif_mask).quantile(0.025)),
+                    abs(bin_stats.sel(stats='mean').where(signif_mask).quantile(0.975)),
+                ]
+            )
+            vmin = -vabs
+            vmax = vabs
+        else:
+            vmin = 0
+            vmax = bin_stats.sel(stats='mean').where(signif_mask).quantile(0.975)
+
         fig, axs = plot_binned_mean(
             bm=bin_stats.sel(stats='mean').where(signif_mask),
             jh=bin_stats.sel(stats='count'),
@@ -943,19 +959,20 @@ def main() -> None:
             target_label='$\\Delta$ET [W m$^{-2}$]',
             x_label='Aridity Index $\\rightarrow$',
             y_label='Leaf Area Index $\\rightarrow$',
-            cmap='BrBG',
-            vmin=-8,
-            vmax=8,
+            cmap="BrBG",
+            vmin=vmin,
+            vmax=vmax,
             signif_dict={'alpha': ALPHA, 'n_min': N_MIN},
             add_circles=True,
-            ref_count=50_000,
+            ref_count=None,
+            # ref_count=50_000,
             dpi=300,
         )
         fig.savefig(fig_path / f"{fstem}.png", dpi=200)
 
     finally:
         if client_cluster is not None:
-            xclim.close_dask_cluster(client_cluster)
+            xclim.close_dask_cluster(client_cluster, remove_std_files=False)
 
 
 if __name__ == "__main__":
